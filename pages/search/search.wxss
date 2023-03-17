@@ -1,0 +1,14 @@
+.title{
+  font-size: 28rpx;
+  margin: 30rpx;
+  padding-left: 20rpx;
+  border-left:solid 5px #000000;
+}
+.tag-group{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 24rpx;
+  padding-left: 30rpx;
+  width: 630rpx;
+}

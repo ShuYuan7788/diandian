@@ -1,0 +1,45 @@
+<!--搜索框-->
+<view catchtap="onClick">
+  <ttj-search disabled placeholder="搜索" shape="round" input-align="center"/>
+</view>
+
+
+<!--tabbar-->
+<ttj-tabbar active="{{active}}" bind:change="onChange" z-index="99">
+	<ttj-tabbar-item icon="home-o">首页</ttj-tabbar-item>
+	<ttj-tabbar-item icon="points" dot>题库</ttj-tabbar-item>
+	<ttj-tabbar-item icon="edit">精选</ttj-tabbar-item>
+</ttj-tabbar>
+
+<view class="question-bank-container">
+  <navigator class="question-bank-navigator" url="questionbankli?id=-1">
+    <view class="question-bank--text">
+      <view class="question-bank--text-title">全部题目</view>
+      <view class="question-bank--text-subTitle">共55个学科,3200题</view>
+    </view>
+    <ttj-icon name="arrow" class="question-bank-img" />
+  </navigator>
+</view>
+<!-- title -->
+<view class="title-gourp">
+  <view class="line"></view>
+  <view class="title">计算机科学与工程学院</view>
+  <view class="line"></view>
+</view>
+<!-- Mainner -->
+<view class="body-group">
+  <swiper class="swiper-group" catchchange="swiperChange">
+    <swiper-item class="subjuet-container">
+      <ttj-grid column-num="3" square gutter="{{ 14 }}" border="false" clickable="true">
+        <block wx:for="{{typeList}}" wx:key="id">
+          <ttj-grid-item use-slot content-class="box-container" url="questionbankli?id={{item.id}}">
+            <view class="exam-item-group">
+              <image class="item-icon" src="{{item.iconSrc}}" mode="widthFix" />
+              <view class="item-title">{{item.type}}</view>
+            </view>
+          </ttj-grid-item>
+        </block>
+      </ttj-grid>
+    </swiper-item>
+  </swiper>
+</view>

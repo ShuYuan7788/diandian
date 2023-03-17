@@ -1,0 +1,128 @@
+<!-- 顶部栏 -->
+<view class="title-container">
+  <view class="title-group">
+    <ttj-count-down time="{{  120 * 60 * 1000 }}" />
+    <view class="counter">1 / 3</view>
+  </view>
+</view>
+<!-- 题目 -->
+<!-- 题目文本 -->
+<ttj-cell-group custom-class="question-context-container">
+  <ttj-cell use-label-slot label-class="question-context">
+    <view slot="title">
+      <ttj-tag plain type="success">单选题</ttj-tag>
+    </view>
+    <view slot="label">
+      已知如下关系：学生Student(S#, Sname)，课程Course(C#, Cname, T#)，选课SC(S#, C#, Score)，教师T(T#, Tname)。其中S#为学号，Sname为学生命名，C#为课号，Cname为课程名，T#为教师编号，Score为成绩，Tname为教师名。阅读SQL语句SELECT Sname FROM Student WHERE S# IN(SELECT S# FROM SC WHERE Student.S#=SC.S# and C#= ‘C01’ and Score>=60)；关于其查询结果，下列说法正确的是_____。
+    </view>
+  </ttj-cell>
+</ttj-cell-group>
+<!-- 题目图片 -->
+<ttj-cell-group custom-class="question-context-container question-img-container">
+  <ttj-cell>
+    <view slot="icon">
+      <image class="question-img" src="images/avter.jpg" mode="widthFix" />
+    </view>
+  </ttj-cell>
+</ttj-cell-group>
+<!-- 分割线 -->
+<ttj-divider contentPosition="center" textColor="#C1CDD1">答题区</ttj-divider>
+
+
+<!-- 单选题 -->
+<ttj-radio-group value="{{ radio }}" bind:change="onRadioChange">
+  <ttj-cell-group custom-class="radio-container">
+    <ttj-cell custom-class="radio-item {{radio == 'A' ? 'radio-item-after':''}}" clickable data-name="A" bind:click="onRadioClick">
+      <view slot="title">A.  UPDATE  选课　SET  成绩=成绩+10　WHERE  课号=1002；</view>
+      <ttj-radio use-icon-slot slot="right-icon" name="A" />
+    </ttj-cell>
+    <ttj-cell custom-class="radio-item {{radio == 'B' ? 'radio-item-after':''}}" title="单选框 2" clickable data-name="B" bind:click="onRadioClick">
+      <ttj-radio use-icon-slot slot="right-icon" name="B" />
+    </ttj-cell>
+    <ttj-cell custom-class="radio-item {{radio == 'C' ? 'radio-item-after':''}}" title="单选框 2" clickable data-name="C" bind:click="onRadioClick">
+      <ttj-radio use-icon-slot slot="right-icon" name="C" />
+    </ttj-cell>
+    <ttj-cell custom-class="radio-item {{radio == 'D' ? 'radio-item-after':''}}" title="单选框 2" clickable data-name="D" bind:click="onRadioClick">
+      <ttj-radio use-icon-slot slot="right-icon" name="D" />
+    </ttj-cell>
+  </ttj-cell-group>
+</ttj-radio-group>
+
+
+<!-- 多选题 -->
+<ttj-checkbox-group value="{{ checkboxresult }}" bind:change="onCheckboxChange">
+  <ttj-cell-group custom-class="checkbox-container">
+    <ttj-cell custom-class="checkbox-item {{checkboxActive[0] ? 'checkbox-item-after':''}}" value-class="value-class" clickable data-index="1" bind:click="toggle">
+      <view slot="title">A.  UPDATE  选课　SET  成绩=成绩+10　WHERE  课号=1002；</view>
+      <ttj-checkbox use-icon-slot class="checkboxes-1" name="A" />
+    </ttj-cell>
+    <ttj-cell custom-class="checkbox-item {{checkboxActive[1] ? 'checkbox-item-after':''}}" title="复选框 B" value-class="value-class" clickable data-index="2" bind:click="toggle">
+      <ttj-checkbox use-icon-slot class="checkboxes-2" name="B" />
+    </ttj-cell>
+    <ttj-cell custom-class="checkbox-item {{checkboxActive[2] ? 'checkbox-item-after':''}}" title="复选框 C" value-class="value-class" clickable data-index="3" bind:click="toggle">
+      <ttj-checkbox use-icon-slot class="checkboxes-3" name="C" />
+    </ttj-cell>
+    <ttj-cell custom-class="checkbox-item {{checkboxActive[3] ? 'checkbox-item-after':''}}" title="复选框 D" value-class="value-class" clickable data-index="4" bind:click="toggle">
+      <ttj-checkbox use-icon-slot class="checkboxes-4" name="D" />
+    </ttj-cell>
+  </ttj-cell-group>
+</ttj-checkbox-group>
+
+<!-- 判断题 -->
+<ttj-radio-group value="{{ judgeResult }}" bind:change="onJudgeChange">
+  <ttj-cell-group custom-class="judge-container">
+    <ttj-cell custom-class="judge-item {{judgeResult == 'True' ? 'judge-item-after':''}}" title="正确" clickable data-name="True" bind:click="onJudgeClick">
+      <ttj-radio use-icon-slot slot="right-icon" name="True" >
+        <ttj-icon name="success" color="{{judgeResult == 'True' ? '#fff':''}}" />
+      </ttj-radio>
+    </ttj-cell>
+    <ttj-cell custom-class="judge-item {{judgeResult == 'False' ? 'judge-item-after':''}}" title="错误" clickable data-name="False" bind:click="onJudgeClick">
+      <ttj-radio use-icon-slot slot="right-icon" name="False" >
+        <ttj-icon name="cross" color="{{judgeResult == 'False' ? '#fff':''}}" />
+      </ttj-radio>
+    </ttj-cell>
+  </ttj-cell-group>
+</ttj-radio-group>
+
+
+<!-- 填空题 -->
+<view class="input-container">
+  <ttj-cell-group>
+    <ttj-field  value="{{ inputResult }}" type="textarea" placeholder="请输入答案" autosize clearable adjust-position="false" border="{{ false }}" 
+    bind:input="onInput" bind:clear="onInputClear"/>
+  </ttj-cell-group>
+</view>
+
+<!-- 综合题 -->
+<view class="Comprehension-container">
+  <!-- 综合题文本 -->
+  <view class="Comprehension-context-container">
+    <ttj-cell-group>
+      <ttj-field input-class="Comprehension-context-input" value="{{ ComprehendResult }}" type="textarea" placeholder="请输入答案" autosize clearable adjust-position="false" border="{{ false }}" 
+      bind:input="onComprehend" bind:clear="onComprehendClear"/>
+    </ttj-cell-group>
+  </view>
+  <view class="Comprehension-img-container">
+    <ttj-uploader file-list="{{ fileList }}" bind:after-read="afterRead" max-count="1" bind:delete="deleteFile" />
+  </view>
+</view>
+
+
+<!-- 底部占位 -->
+<view class="bottom"></view>
+<!-- 底部区域 -->
+<ttj-goods-action>
+  <ttj-goods-action-icon text="收藏">
+    <view slot="icon">
+      <ttj-icon name="star-o" size="50rpx" wx:if="{{false}}" />
+      <image class="collect-icon" src="images/star@select.png" mode="widthFix" />
+    </view>
+  </ttj-goods-action-icon>
+  <ttj-goods-action-icon url="overview" text="预览">
+    <view slot="icon">
+      <ttj-icon name="orders-o" size="50rpx" />
+    </view>
+  </ttj-goods-action-icon>
+  <ttj-goods-action-button color="rgba(126, 230, 150, 0.521)" text="上一题" type="warning" />
+  <ttj-goods-action-button color="rgba(126, 230, 150, 0.9)" text="下一题" />
+</ttj-goods-action>

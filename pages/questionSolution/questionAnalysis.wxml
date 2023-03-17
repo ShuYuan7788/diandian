@@ -1,0 +1,45 @@
+<scroll-view scroll-y class="fatherBox">
+  <ttj-sticky>
+    <view class="analysis">
+      <view class="title" class="analysisTitle">
+        <image class="avatar"></image>
+        <view class="userName">lsn</view>
+        <ttj-tag type="success" size="medium">官方题解</ttj-tag>
+      </view>
+      <view class="label" class="analysisLabel">
+        <view class="content">adfasfasdfashfdsghdfg打算离开积分卡是dasgasdgfasdfas啊的飞机喀什返回拉萨的发的饭卡就是大幅拉升了客服的阿斯顿发顺丰的撒发射点发射点发的发生发射点发范德萨发士大夫</view>
+        <view class="bottom">
+          <view class="time">2020-7-31</view>
+          <view class="good">
+            <ttj-icon name="{{goodJob}}" size="50rpx" catchtap="clickgood"/>
+            <view class="count">(32)</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </ttj-sticky>
+  <ttj-steps custom-class="steps" desc-class="text" steps="{{steps}}" active="{{steps.length}}" direction="vertical" inactive-icon="chat" active-icon="chat" active-color="#868effa6"/>
+</scroll-view>
+
+<view class="tabbar" style="position:absolute;bottom:0;z-index:10;">
+  <view class="writeAnalysis" bindtap="clickWriteAnalysis">写题解</view>
+</view>
+<!-- 富文本编辑器 -->
+<ttj-popup show="{{writeAnalysisShow}}" position="bottom" custom-style="bottom:{{isIOS ? keyboardHeight : 0}}px;" custom-class="myAnalysisShow" bind:close="CloseMyAnalysisShow" overlay-style="position:fixed;" round>
+  <view class="container">
+      <editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange" bindready="onEditorReady">
+      </editor>
+  </view>
+  <view class="toolbar" catchtouchend="format" hidden="{{keyboardHeight > 0 ? false : true}}" style="bottom: {{isIOS ? keyboardHeight : 0}}px;">
+    <i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>
+    <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i>
+    <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" data-value="{{3}}"></i>
+    <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+    <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+    <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+    <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+    <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i>
+    <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i>
+  </view>
+</ttj-popup>
+<!-- 富文本编辑器 -->

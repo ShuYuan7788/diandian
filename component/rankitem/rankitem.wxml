@@ -1,0 +1,19 @@
+<!--component/rankitem/rankitem.wxml-->
+<view class="rank" catchtap="onClick" wx:if="{{index==0}}" style="margin:0 0;padding:20rpx 40rpx;box-shadow:1rpx 2rpx 8rpx 0 #cac9c9;border-radius:20rpx;">
+  <view class="index">
+    <image wx:if="{{index==0}}" src="images/NO1.png"></image>
+  </view>
+  <image class="avatar" src="{{item.avatarUrl}}"></image>
+  <view class="nick">{{item.nick}}</view>
+  <view class="total" style="color:#59DBFF;">{{item.questionCount}}</view>
+</view>
+<view wx:else catchtap="onClick" class="rank">
+  <view class="index">
+    <image wx:if="{{index==1}}" src="images/NO2.png"></image>
+    <image wx:if="{{index==2}}" src="images/NO3.png"></image>
+    <view wx:if="{{index>2}}" class="number">{{index+1}}</view>
+  </view>
+  <image class="avatar" src="{{item.avatarUrl}}"></image>
+  <view class="nick">{{item.nick}}</view>
+  <view class="total">{{item.questionCount}}</view>
+</view>

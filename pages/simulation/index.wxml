@@ -1,0 +1,53 @@
+<!--搜索框-->
+<view catchtap="onClick">
+	<ttj-search disabled placeholder="搜索" shape="round" input-align="center" />
+</view>
+
+<!--下拉选择框-->
+<ttj-sticky>
+  <!-- <view class="select-title-container">
+    <text >科目</text>
+    <text >年份</text>
+  </view> -->
+	<ttj-dropdown-menu>
+		<ttj-dropdown-item value="{{ value0 }}" options="{{ subjectMenu }}" bind:change="onSubjectChange"/>
+		<ttj-dropdown-item value="{{ value0 }}" options="{{ yearMenu }}" bind:change="onYearChange"/>
+	</ttj-dropdown-menu>
+</ttj-sticky>
+
+<!--Mainner-->
+<ttj-cell-group custom-class="cell-container">
+	<block wx:for="{{10}}" wx:key="questionId">
+		<ttj-cell catch:tap="onClickShowOverlay" border="{{ false }}" duration="0.2" custom-class="cell-item-container" use-label-slot title-style="font-size:35rpx" size="large" clickable>
+      <view slot="title" class="title-container">
+        <view class="title-text">蓝桥杯算法模拟赛</view>
+      </view>
+      <view>
+        <ttj-tag round type="primary" wx:if="{{index < 3}}">NEW</ttj-tag>
+      </view>
+			<view slot="label" class="label-container">
+				<view class="label-year">年份 2020</view>
+			</view>
+		</ttj-cell>
+	</block>
+</ttj-cell-group>
+
+<!-- Overlay -->
+<ttj-overlay show="{{ showOverlay }}" bind:click="onClickHideOverlay" z-index="101" custom-style="background-color:rgba(0,0,0,0)">
+  <view class="paper-info-group">
+    <view class="paper-info-container">
+			<view class="paper-title">蓝桥杯算法模拟赛</view>
+			<view class="sub-item">试卷类型：数学</view>
+			<view class="sub-item">试卷年份：2020</view>
+			<view class="sub-item">考试时间：90分钟</view>
+			<view class="sub-item">试卷总分：100分</view>
+			<view class="sub-button-container">
+				<!-- color="linear-gradient(to right, #c6e6e8, #55bb8a)" -->
+				<ttj-button round icon="clock" color="rgba(29, 233, 182, 0.575);" type="primary" bind:click="onClickStart">开始</ttj-button>
+			</view>
+		</view>
+  </view>
+</ttj-overlay>
+
+<!-- dialog -->
+<ttj-dialog id="van-dialog" />

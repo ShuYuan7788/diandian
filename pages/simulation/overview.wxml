@@ -1,0 +1,66 @@
+
+<scroll-view style="height: 100vh" scroll-y="true" enable-back-to-top="true" scroll-into-view="{{scrollIntoId}}" scroll-with-animation="true">
+  <!-- 标题 -->
+  <view class="title">蓝桥杯算法模拟</view>
+  <!-- 题目 -->
+  <block wx:for="{{5}}">
+    <ttj-cell-group id="_{{index+1}}">
+      <ttj-cell use-label-slot border="{{ false }}" value-class="value-class" label-class="question-context" title-class="question-id" border>
+        <view slot="title">
+          <ttj-tag plain type="primary">单选题</ttj-tag>
+          <view>{{index+1}}.</view>
+        </view>
+        <view slot="label">
+          <view class="question-text">已知如下关系：学生Student(S#, Sname)，课程Course(C#, Cname, T#)，选课SC(S#, C#, Score)，教师T(T#, Tname)。其中S#为学号，Sname为学生命名，C#为课号，Cname为课程名，T#为教师编号，Score为成绩，Tname为教师名。阅读SQL语句SELECT Sname FROM Student WHERE S# IN(SELECT S# FROM SC WHERE Student.S#=SC.S# and C#= ‘C01’ and Score>=60)；关于其查询结果，下列说法正确的是_____。</view>
+          <view class="question-img">
+            <image src="images/avter.jpg" mode="widthFix" />
+          </view>
+          <view class="question-options">
+            <view class="options">A. C01号课程及格的所有学生的姓名</view>
+            <view class="options">A. C01号课程及格的所有学生的姓名</view>
+            <view class="options">A. C01号课程及格的所有学生的姓名</view>
+            <view class="options">A. C01号课程及格的所有学生的姓名</view>
+          </view>
+        </view>
+      </ttj-cell>
+      <!-- 答案 -->
+      <view class="tag">我的答案</view>
+      <!-- 答案文本 -->
+      <ttj-cell center custom-class="answer-context-container" border="{{ false }}" title-class="answer-context" value-class="value-class certify-container">
+        <view slot="title">未填写答案</view>
+        <view>修改答案</view>
+      </ttj-cell>
+      <!-- 答案图片 -->
+      <!-- <ttj-cell custom-class="answer-context-container">
+      <view slot="icon">
+        <image class="answer-img" src="images/avter.jpg" mode="widthFix" />
+      </view>
+    </ttj-cell> -->
+    </ttj-cell-group>
+  </block>
+</scroll-view>
+
+<!-- 跳转界面 -->
+<ttj-popup show="{{ showNav }}" round position="bottom" custom-style="height: 30%" bind:close="onCloseNav">
+  <view class="prompt">点击对应的题目跳转</view>
+  <view class="nav-body">
+    <swiper class="swiper-group" catchchange="swiperChange">
+      <swiper-item class="item-container">
+        <ttj-grid column-num="6" square gutter="{{ 10 }}" border="false" clickable="true" border="false" custom-class="grid-container">
+          <block wx:for="{{10}}">
+            <ttj-grid-item content-class="item-box-container" text-class="item-box-text" data-id="_{{index+1}}" bind:click="onClickNav">
+              <view slot="text">{{index+1}}</view>
+            </ttj-grid-item>
+          </block>
+        </ttj-grid>
+      </swiper-item>
+    </swiper>
+  </view>
+</ttj-popup>
+<!-- 底部占位 -->
+<view class="bottom"></view>
+<!-- 底部区域 -->
+<ttj-goods-action>
+  <ttj-goods-action-icon icon="exchange" text="跳转" bind:click="onNav" />
+  <ttj-goods-action-button text="提交试卷并查看结果" color="#59DBFF" bind:click="onFinish" />
+</ttj-goods-action>

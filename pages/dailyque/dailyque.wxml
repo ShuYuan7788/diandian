@@ -1,0 +1,73 @@
+<!--pages/dailyque/dailyque.wxml-->
+<view class="setting-class" catchtap="toLoveChoiceEvent">
+  <image class="setting-icon" src="/pages/dailyque/image/setting.png"></image>
+</view>
+
+<view class="questioninfo-class">
+  <view class="question-title">约数</view>
+  <view class="question-detail">
+    <view class="question-type">单选题</view>
+    <view class="question-type">难度：简单</view>
+  </view>
+</view>
+
+<view class="question-content-container">
+  <view class="total-class">
+    <view class="quesiton-content-class">
+      <view class="question-content">xxxxxxxxxx xxxxxxxxx xxxxxxxxx</view>
+      <image wx:if="{{questionInfo.questionImage}}" class="question-image" src="{{questionImageUrl}}" mode="widthFix" catchtap="viewImage" data-url="{{questionImageUrl}}"></image>
+    </view>
+    <view class="line"></view>
+    <view wx:if="{{!true}}" class="fill-answer-class">
+      <ttj-field placeholder="答案写在此" bindinput="onFillEvent"></ttj-field>
+    </view>
+
+    <view wx:if="{{true}}" class="options-class">
+      <ttj-radio-group value="{{radio}}" bind:change="onChange">
+          <ttj-radio use-icon-slot class="{{radio == 1 ? 'one-radio-after' : 'one-radio'}}" name="1">A.XXX XXXXXXX XXXXXXX</ttj-radio>
+          <ttj-radio use-icon-slot class="{{radio == 2 ? 'one-radio-after' : 'one-radio'}}" name="2">B.XXXX XXX</ttj-radio>
+          <ttj-radio use-icon-slot class="{{radio == 3 ? 'one-radio-after' : 'one-radio'}}" name="3">C.XXXXXXX</ttj-radio>
+          <ttj-radio use-icon-slot class="{{radio == 4 ? 'one-radio-after' : 'one-radio'}}" name="4">D.XX XXX XXX</ttj-radio>
+      </ttj-radio-group>
+    </view>
+
+    <view wx:if="{{!true}}" class="options-class">
+      <ttj-checkbox-group value="{{checked}}" bind:change="onCheckBoxChange">
+        <ttj-checkbox use-icon-slot class="{{isChecked[1] ? 'checkbox-after' : 'checkbox-class'}}" name="1">A. xxxxxxxx</ttj-checkbox>
+        <ttj-checkbox use-icon-slot class="{{isChecked[2] ? 'checkbox-after' : 'checkbox-class'}}" name="2">B. xxxx xxxx</ttj-checkbox>
+        <ttj-checkbox use-icon-slot class="{{isChecked[3] ? 'checkbox-after' : 'checkbox-class'}}" name="3">C. XXXXX XXXX</ttj-checkbox>
+        <ttj-checkbox use-icon-slot class="{{isChecked[4] ? 'checkbox-after' : 'checkbox-class'}}" name="4">D. XXX xxxx</ttj-checkbox>
+      </ttj-checkbox-group>
+    </view>
+
+    <view wx:if="{{!true}}" class="judge-class">
+      <ttj-radio-group class="judge-class" value="{{checkRadio}}" bind:change="onCheckChange">
+          <view class="{{checkRadio == 1 ? 'judge-icon-class-after' : 'judge-icon-class'}}">
+            <ttj-radio use-icon-slot class="judge-icon" name="1">
+              <image class="judge-icon" slot="icon" src="/pages/dailyque/image/right.png" />
+            </ttj-radio>
+          </view>  
+          <view class="{{checkRadio == 2 ? 'judge-icon-class-after' : 'judge-icon-class'}}">
+            <ttj-radio use-icon-slot class="judge-icon" name="2">
+              <image class="judge-icon" slot="icon" src="/pages/dailyque/image/wrong.png" />
+            </ttj-radio>
+          </view>
+      </ttj-radio-group>
+    </view>
+
+    <view wx:if="{{!isShow}}" catchtap="onSubmitEvent" class="submit-button-con">
+      <ttj-button round custom-class="submit-button">提交</ttj-button>
+    </view>
+
+    <view wx:if="{{isShow}}" class="line-text-container">
+      <view class="line-text">解析
+        <view class="sec-line"></view>
+      </view>
+    </view>
+
+    <view wx:if="{{isShow}}" class="show-answer-container">
+      <view class="correct-answer">正确答案：A</view>
+      <view class="analyse-class">暂无解析</view>
+    </view>
+  </view>
+</view>

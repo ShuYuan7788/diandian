@@ -1,0 +1,29 @@
+<!-- 类型标题 -->
+<view class="type-container">
+  <view class="type-text">数学</view>
+</view>
+
+<!-- 选择框 -->
+<view class="choice">
+  <view class="choice-box">请选择年份</view>
+  <ttj-sticky>
+    <ttj-dropdown-menu class="choice-box" >
+      <ttj-dropdown-item value="{{ value0 }}" options="{{ yearMenu }}" />
+    </ttj-dropdown-menu>
+  </ttj-sticky>
+</view>
+
+<!-- 下载 -->
+<ttj-cell-group custom-class="cell-container">
+	<block wx:for="{{examList}}" wx:key="examId">
+		<ttj-cell border="{{ false }}" custom-class="cell-item-container" use-label-slot title-style="font-size:35rpx" size="large" url="/pages/previewpaper/previewpaper" clickable>
+			<view slot="title" class="title-container">
+				<view class="title-text">{{item.examTitle}}</view>
+        <view class="paper-detail">{{item.examYear}}</view>
+			</view>
+			<view slot="right-icon">
+				<image src="images/download.png" class="more-img" mode="widthFix" ></image>
+			</view>	
+		</ttj-cell>
+	</block>
+</ttj-cell-group>

@@ -1,0 +1,90 @@
+<!-- background -->
+<view class="background">
+  <image src="../../images/ranking/rank-background.png" mode="widthFix" />
+</view>
+<!--返回键-->
+<ttj-icon name="arrow-left" size="50rpx"  catch:click="returnIndex" style="margin-top:60rpx;margin-left:40rpx;position:fixed"/>
+
+<view class="fartherBox">
+  
+    <view class="time">2020年8月</view>
+    <view class="exam-cell" style="margin-bottom:20rpx;">
+      <ttj-swipe-cell  async-close catch:close="onDetail" right-width="{{ 65 }}" left-width="{{0}}">
+        <ttj-cell-group>
+          <ttj-cell catch:click="onClick" title="蓝桥杯模拟赛" value="95分" />
+        </ttj-cell-group>
+        <view class="detele" slot="right">详情</view>
+      </ttj-swipe-cell>
+    </view>
+    <view class="time">2020年6月</view>
+    <view class="exam-cell" style="margin-bottom:20rpx;">
+      <ttj-swipe-cell async-close catch:close="onDetail" right-width="{{ 65 }}" left-width="{{0}}">
+        <ttj-cell-group>
+          <ttj-cell catch:click="onClick" title="算法竞赛" value="60分" />
+        </ttj-cell-group>
+        <view class="detele" slot="right">删除</view>
+      </ttj-swipe-cell>
+    </view>
+    <view class="time">2020年5月</view>
+    <view class="exam-cell" style="margin-bottom:5rpx;">
+      <ttj-swipe-cell async-close catch:close="onDetail" right-width="{{ 65 }}" left-width="{{0}}">
+        <ttj-cell-group>
+          <ttj-cell catch:click="onClick" title="大学英语模拟题" value="80分" />
+        </ttj-cell-group>
+        <view class="detele" slot="right">删除</view>
+      </ttj-swipe-cell>
+    </view>
+    <view class="exam-cell" style="margin-bottom:5rpx;">
+      <ttj-swipe-cell async-close catch:close="onDetail" right-width="{{ 65 }}" left-width="{{0}}">
+        <ttj-cell-group>
+          <ttj-cell catch:click="onClick" title="大学生数学竞赛" value="70分" />
+        </ttj-cell-group>
+        <view class="detele" slot="right">删除</view>
+      </ttj-swipe-cell>
+    </view>
+    <view class="exam-cell" style="margin-bottom:20rpx;">
+      <ttj-swipe-cell async-close catch:close="onDetail" right-width="{{ 65 }}" left-width="{{0}}">
+        <ttj-cell-group>
+          <ttj-cell catch:click="onClick" title="面向对象程序设计" value="90分" />
+        </ttj-cell-group>
+        <view class="detele" slot="right">删除</view>
+      </ttj-swipe-cell>
+    </view>
+    <view class="time">2020年5月</view>
+    <view class="exam-cell" style="margin-bottom:5rpx;">
+      <ttj-swipe-cell async-close catch:close="onDetail" right-width="{{ 65 }}" left-width="{{0}}">
+        <ttj-cell-group>
+          <ttj-cell catch:click="onClick" title="大学英语模拟题" value="80分" />
+        </ttj-cell-group>
+        <view class="detele" slot="right">删除</view>
+      </ttj-swipe-cell>
+    </view>
+    <view class="exam-cell" style="margin-bottom:5rpx;">
+      <ttj-swipe-cell async-close catch:close="onDetail" right-width="{{ 65 }}" left-width="{{0}}">
+        <ttj-cell-group>
+          <ttj-cell catch:click="onClick" title="大学生数学竞赛" value="70分" />
+        </ttj-cell-group>
+        <view class="detele" slot="right">删除</view>
+      </ttj-swipe-cell>
+    </view>
+    <view class="exam-cell" style="margin-bottom:20rpx;">
+      <ttj-swipe-cell async-close catch:close="onDetail" right-width="{{ 65 }}" left-width="{{0}}">
+        <ttj-cell-group>
+          <ttj-cell catch:click="onClick" title="面向对象程序设计" value="90分" />
+        </ttj-cell-group>
+        <view class="detele" slot="right">删除</view>
+      </ttj-swipe-cell>
+    </view>
+
+  <view>
+    <ttj-empty class="custom-image" image="https://img.yzcdn.cn/vant/custom-empty-image.png" description="这里空空如也"/>
+  </view>
+</view>
+<ttj-popup show="{{ show }}" round position="bottom" custom-style="height: 30%" bind:close="onClose">
+  <view class="detail">
+    <view class="text">试卷年份：2018年</view>
+    <view class="text">模考人次：99人</view>
+    <view class="text">考试时长：90分钟</view>
+    <view class="text">试卷总分：100分</view>
+  </view>
+</ttj-popup>

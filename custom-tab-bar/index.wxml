@@ -1,0 +1,12 @@
+<ttj-tabbar active="{{ active }}" bind:change="onChange">
+  <ttj-tabbar-item icon="{{ list[0].icon }}">{{
+    list[0].text
+  }}</ttj-tabbar-item>
+  <ttj-tabbar-item icon="{{ list[1].icon }}">{{
+    list[1].text
+  }}</ttj-tabbar-item>
+  <ttj-tabbar-item icon="{{ list[2].icon }}">{{
+    list[2].text
+  }}</ttj-tabbar-item>
+</ttj-tabbar>
+

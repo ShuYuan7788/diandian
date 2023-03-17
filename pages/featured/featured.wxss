@@ -1,0 +1,43 @@
+/* pages/featured/featured.wxss */
+
+/* 背景图片 */
+.image-container{
+  height: 100%;
+  width: 100%;
+}
+
+.background-img{
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+}
+
+.cell-group {
+  margin-top: 47%;
+}
+
+.nav-container {
+  height: 180rpx !important;
+  width: 700rpx !important;
+  margin: 0 auto !important;
+  border-radius: 15rpx !important;
+  background-color: rgba(255, 255, 255, 0.356) !important;
+  box-shadow: rgb(141, 141, 141) 0px 2px 25px 0px !important;
+  margin-bottom: 15% !important;
+}
+
+.nav-title {
+  font-size: 38rpx !important;
+  font-weight: 700 !important;
+  line-height: 80rpx !important;
+}
+
+.nav-label {
+  font-size: 30rpx !important;
+  color: #666666 !important;
+  font-weight: 400;
+}
+
+  

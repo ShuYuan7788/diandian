@@ -1,0 +1,72 @@
+<!--背景-->
+<image src="{{backgroundUrl}}" class="background" style="position:absolute;height:100%;width:100%;"></image>
+<!-- 头像 -->
+<image wx:if="{{isRegister == false}}" src="images/avatar.png" class="avatar" style="position:absolute;margin-top:470rpx;margin-left:230rpx;"></image>
+<image wx:else src="{{avatarUrl}}" animation="{{animation0}}" class="avatar" catchtap="getUserInfo" style="position:absolute;margin-top:470rpx;margin-left:230rpx;"></image>
+<!-- 小工具 -->
+
+  <image src="images/cross.png" animation="{{animation1}}" class="images" style="position:absolute;margin-top:530rpx;margin-left:310rpx;" catchtap="getToMyWrong"></image>
+  <image src="images/star.png" animation="{{animation2}}" class="images" style="position:absolute;margin-top:560rpx;margin-left:320rpx;" catchtap="getToMyCollection"></image>
+  <image src="images/rank.png" animation="{{animation3}}" class="images" style="position:absolute;margin-top:540rpx;margin-left:290rpx;" catchtap="getToRank"></image>
+  <image src="images/question.png" animation="{{animation4}}" class="images" style="position:absolute;margin-top:550rpx;margin-left:330rpx;" catchtap="getToQuestion"></image>
+  <image src="images/book.png" animation="{{animation5}}" class="images" style="position:absolute;margin-top:550rpx;margin-left:330rpx;" catchtap="getToMyPapers"></image>
+  <image src="images/schedule.png" animation="{{animation6}}" class="images" style="position:absolute;margin-top:550rpx;margin-left:330rpx;" catchtap="getToMyLoveCollection"></image>
+
+<!-- motto -->
+<view wx:if="{{userInfo.motto != null && userInfo.motto != ''}}" class="motto" style="position:absolute;bottom:100rpx;">
+  <text animation="{{animation7}}">{{userInfo.motto}}</text>
+</view>
+<view wx:else class="motto" style="position:absolute;bottom:100rpx;">
+  <text animation="{{animation7}}">还没有留下座右铭哦~~</text>
+</view>
+<!-- 信息 -->
+<view class="box" animation="{{animation8}}" style="position:absolute;top:180rpx;left:0rpx;" catchtap="clickNick">
+  <view class="title">昵称</view>
+  <view class="info nick">{{userInfo.nick}}</view>
+</view>
+<view class="box" animation="{{animation9}}" style="position:absolute;top:300rpx;left:0rpx;">
+  <view class="title">学号</view>
+  <view class="info sno" style="color:gray;">{{userInfo.sno}}</view>
+</view>
+<view class="box" animation="{{animation10}}" style="position:absolute;top:420rpx;left:0rpx;">
+  <view class="title">电话</view>
+  <view class="info phone" style="color:gray;">{{userInfo.phone}}</view>
+</view>
+<view class="box" animation="{{animation11}}" style="position:absolute;top:540rpx;left:0rpx;" catchtap="clickCollege">
+  <view class="title">学院</view>
+  <view class="info college">{{userInfo.college}}</view>
+</view>
+<view class="box" animation="{{animation12}}" style="position:absolute;top:660rpx;left:0rpx;height:130rpx;" catchtap="clickMotto">
+  <view class="title">座右铭</view>
+  <view wx:if="{{userInfo.motto != null && userInfo.motto != ''}}" class="info info-motto">{{userInfo.motto}}</view>
+  <view wx:else class="info info-motto">还没有留下座右铭哦~~</view>
+</view>
+<view class="box" animation="{{animation13}}" style="position:absolute;top:810rpx;left:0rpx;">
+  <view class="title">总答题数</view>
+  <view class="info questionCount" style="color:gray;">{{userInfo.questionCount}}</view>
+</view>
+<view class="box" animation="{{animation14}}" style="position:absolute;top:930rpx;left:0rpx;">
+  <view class="title">正确率</view>
+  <view class="info level" style="color:gray;">{{userInfo.accuracy}}</view>
+</view>
+<view wx:if="{{userInfo.isAdmin == true}}" class="box" animation="{{animation15}}" style="position:absolute;top:1050rpx;left:0rpx;">
+  <view class="title" style="color:blue;">special</view>
+  <view class="info isAdmin" style="color:blue;">管理员</view>
+</view>
+
+<view class="mask" hidden="{{mask_situation}}" style="z-index:100;position:absolute;width:100%;height:100%;">
+  <textarea wx:if="{{changeClick != 'motto'}}" class="input" fixed="true" value="{{value}}" bindinput="setValue" maxlength="{{max}}"></textarea>
+  <textarea wx:if="{{changeClick == 'motto'}}" class="input mottoInput" fixed="true" value="{{value}}" bindinput="setValue" maxlength="{{max}}">
+    <view class="onClearEvent" catchtap="onClearEvent">
+      <image class="clearicon" catchtap="onClearEvent" src="/pages/mine/images/clear.png"></image>
+    </view>
+    <view class="currentWordNumber">{{valueNumber}}/{{max}}</view>
+  </textarea>
+  <view class="bottom" style="position:absolute;bottom:50rpx;width:100%;">
+    <button class="changeInfo" type="primary" style="width:180rpx;" catchtap="cancelChange">取消</button>
+    <button class="changeInfo" style="width:320rpx;" catchtap="saveChange">
+      <image src="images/pen.png" style="height:27rpx;width:27rpx;"></image>保存信息
+    </button>
+  </view>
+</view>
+

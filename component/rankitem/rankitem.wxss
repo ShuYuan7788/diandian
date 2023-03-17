@@ -1,0 +1,45 @@
+.rank{
+  margin: 20rpx 40rpx;
+  box-sizing: border-box;
+  height: 150rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: solid #cac9c982 2rpx;
+  background-color: #ffffff;
+}
+.rank .index{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.rank .index image{
+  width: 100%;
+  height: 100%;
+}
+.rank .index .number{
+  width: 100%;
+  height: 100%;
+  font-size: 50rpx;
+  color: #646161;
+  text-align: center;
+}
+.rank .avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border: solid #cac9c9 2rpx;
+  border-radius: 50%;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.rank .nick{
+  color: #646161;
+  margin-right: 200rpx;
+  width: 200rpx;
+}
+.rank .total{
+  right: 0;
+  font-size: 50rpx;
+  color:#7EE697;
+  font-weight: 600;
+}

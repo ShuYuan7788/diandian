@@ -1,0 +1,6 @@
+<view class="item" bindtap="onClick">
+  <view class="item">
+    <image src="{{imageUrl}}" class="image"></image>
+    <text>{{text}}</text>
+  </view>
+</view>

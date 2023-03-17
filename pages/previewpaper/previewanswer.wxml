@@ -1,0 +1,39 @@
+<!--pages/previewpaper/previewanswer.wxml-->
+<view class="title-container">蓝桥杯算法模拟赛</view>
+<view class="question-container">
+    <view class="question-class">
+      <view class="tag-class">
+        <ttj-tag color="#59DBFF" size="large" plain wx:if="{{!true}}">选择题</ttj-tag>
+        <ttj-tag color="#fcd337" size="large" plain wx:if="{{!true}}">多选题</ttj-tag>
+        <ttj-tag color="#1ba784" size="large" plain wx:if="{{!true}}">填空题</ttj-tag>
+        <ttj-tag color="#eea2a4" size="large" plain wx:if="{{!true}}">判断题</ttj-tag>
+        <ttj-tag color="#f07c82" size="large" plain wx:if="{{true}}">综合题</ttj-tag>
+        <image class="star-img" src="image/star.png"/>
+      </view>
+      <view class="question-title-container">
+        <view class="question-title" wx:if="{{true}}">下列哪些选项属于要素市场?()</view>
+      </view>
+      <view class="question-options-container">
+          <!--选择题-->
+          <ttj-radio-group wx:if="{{true}}">
+              <ttj-radio use-icon-slot custom-class="options" name="1">A.XXX XXXXXXX XXXXXXX</ttj-radio>
+              <ttj-radio use-icon-slot custom-class="options" name="2">B.XXXX XXX</ttj-radio>
+              <ttj-radio use-icon-slot custom-class="options" name="3">C.XXXXXXX</ttj-radio>
+              <ttj-radio use-icon-slot name="4">D.XX XXX XXX</ttj-radio>
+          </ttj-radio-group>
+          <!--判断题-->
+          <ttj-radio-group wx:if="{{!true}}">
+              <ttj-radio use-icon-slot custom-class="options" name="1">A.XXX XXXXXXX XXXXXXX</ttj-radio>
+              <ttj-radio use-icon-slot name="2">B.XXXX XXX</ttj-radio>
+          </ttj-radio-group>
+      </view>
+    </view>
+</view>
+
+<ttj-divider contentPosition="center" customStyle="color: #FF5050; border-color:#e4e4e4; font-size: 28rpx;">官方答案</ttj-divider>
+
+<view class="official-container">
+  <view class="official-answer-container">
+    <view class="official-answer">B</view>
+  </view>
+</view>

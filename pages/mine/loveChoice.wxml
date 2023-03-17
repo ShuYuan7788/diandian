@@ -1,0 +1,32 @@
+<!-- <image src="https://s1.ax1x.com/2020/08/07/aWdPC8.jpg" class="background" style="position:absolute;height:100%;width:100%;"></image> -->
+<movable-area class="fatherBox" style="position:absolute;width:100%;height:100%;">
+  <movable-view wx:for="{{subject}}" wx:key="this" class="subject" wx:if="{{item.current == 0 && minusTouch == 0}}" direction="all" id="{{index}}" x="{{item.x}}" y="{{item.y}}" bindchange="location" bindtouchend="endLocation">
+    <image src="{{item.src}}"></image>
+    <view>{{item.title}}</view>
+  </movable-view>
+  <movable-view wx:for="{{subject}}" wx:key="this" class="subject" wx:if="{{item.current == 1 && minusTouch == 1}}" direction="all" id="{{index}}" x="{{item.x}}" y="{{item.y1}}" style="z-index:81;" bindchange="location" bindtouchend="endLocation1">
+    <image src="{{item.src}}"></image>
+    <view>{{item.title}}</view>
+  </movable-view>
+</movable-area>
+
+<image animation="{{animation}}" bindtap="openMinus" class="schedule" src="images/plus.png" style="position:fixed;left:{{plusLocation.x}}px;top:{{plusLocation.y}}px;"></image>
+<image animation="{{animation1}}" bindtap="openPlus" class="scheduleT" src="images/sword.png" style="position:fixed;left:{{plusLocation.x}}px;top:{{plusLocation.y}}px;z-index:{{minusZ}};"></image>
+
+<view class="maskOne" hidden="{{maskOne}}" style="position:absolute;height:100%;;width:100%;">
+  <image class="plus" src="images/plus.png" style="position:fixed;left:{{plusLocation.x}}px;top:{{plusLocation.y}}px;"></image>
+  <view class="textView" style="position:fixed;width:100%;bottom:250rpx;">
+    <view class="text">将课程拖入此框的加号上即可添加相应学科，这将决定您每日一题会出现的题目类型</view>
+  </view>
+  <view class="buttonView" style="position:fixed;width:100%;bottom:100rpx;">
+    <button class="button" style="width:250rpx;" catchtap="clickNext">知道了</button>
+  </view>
+</view>
+<view class="maskTwo" hidden="{{maskTwo}}" style="position:absolute;height:100%;;width:100%;">
+  <view class="textView" style="position:fixed;width:100%;top:20rpx;">
+    <view class="text">将课程拖出此框，即可取消选中的学科</view>
+  </view>
+  <view class="buttonView" style="position:fixed;width:100%;bottom:50rpx;">
+    <button class="button" style="width:250rpx;" catchtap="clickFinish">知道了</button>
+  </view>
+</view>

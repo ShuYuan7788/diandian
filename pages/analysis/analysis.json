@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "analysis":"/component/analysis/analysis"
+  },
+  "navigationBarTitleText": "题目解析"
+}

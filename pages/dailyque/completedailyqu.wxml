@@ -1,0 +1,18 @@
+<!--pages/dailyque/completedailyqu.wxml-->
+<view class="circle-class">
+  <view class="circle">
+    <image class="thumb-class" src="/pages/dailyque/image/thumb.png"></image>
+  </view>
+</view>
+  <image class="triangleL" src="/pages/dailyque/image/triangleleft.png"></image>
+  <image class="triangleR" src="/pages/dailyque/image/triangleright.png"></image>
+  <view class="complete-text-class">今日任务已完成！</view>
+  <view class="answer-class">
+  <view class="answer" style="color: #4CD1B0">答案错误!</view>
+    <view class="answer">正确答案：A </view>
+    <view class="show-answer-class-container">
+      <ttj-button type="primary" color="#4CD1B0" style="margin-top: 60rpx;" catchtap="onShowAsnwerEvent">查看解析</ttj-button>
+    </view>
+    <ttj-button type="primary" color="rgb(247, 227, 7)" style="margin-top: 20rpx;" wx:if="{{true}}" catchtap="onCollectEvent">点击收藏</ttj-button>
+    <ttj-button type="primary" color="rgb(247, 227, 7)" style="margin-top: 20rpx;" wx:if="{{!true}}" catchtap="onCollectEvent">取消收藏</ttj-button>
+  </view>

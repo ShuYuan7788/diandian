@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "tag":"../../component/tag/tag"
+  }
+}

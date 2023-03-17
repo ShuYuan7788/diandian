@@ -1,0 +1,116 @@
+.container{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.background{
+  width: 100%;
+  height: 280rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  /* background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); */
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  /* background-color: #ddfae4; */
+  /* color: #b1ccf8; */
+  position: fixed;
+  z-index: -1;
+}
+
+.nav-bar-custom{
+  background: rgba(0, 0, 0, 0) !important;
+}
+
+.title-container{
+  color: rgb(31, 139, 244) !important;
+}
+
+.van-dropdown-menu{
+  background-color: #ffffff00 !important;
+}
+
+.van-ellipsis{
+  font-size: 40rpx !important;
+  font-weight: 600 !important;
+  letter-spacing: 8rpx;
+  height: 40rpx !important;
+}
+.van-dropdown-item__title{
+  font-size: 34rpx !important;
+}
+
+.top-group{
+  margin-top: 50rpx;
+  width: 85%;
+  height: 250rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  box-shadow: 4rpx 4rpx 16rpx 0 #cac9c9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.top-group .rank{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-top: 20rpx;
+  font-size: 36rpx;
+}
+.top-group .rank .text{
+  text-align: center;
+  color: #8A8A8A;
+}
+.top-group .rank .number{
+  text-align: center;
+  color: #000000;
+  font-weight: 600;
+  font-size: 50rpx;
+  padding: 20rpx;
+}
+
+.top-group .user{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-items: center;
+}
+.top-group .user .avatar{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  border: solid #cac9c9 2rpx;
+  margin: 10rpx;
+}
+.top-group .user .nick{
+  color: #505559;
+  padding: 5rpx;
+}
+.top-group .total{
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-top: 20rpx;
+  font-size: 36rpx;
+}
+.top-group .total .number{
+  text-align: center;
+  color: #000000;
+  font-weight: 600;
+  font-size: 50rpx;
+  padding: 20rpx;
+}
+.top-group .total .text{
+  text-align: center;
+  color: #8A8A8A;
+}
+
+.scrollview{
+  width: 100%;
+  margin-top: 50rpx;
+}
+.scrollview .ranklist{
+  width: 100%;
+  margin-top: 20rpx;
+}

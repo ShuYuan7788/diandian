@@ -1,0 +1,48 @@
+Page{
+  height:100%;
+}
+.title{
+  border-left: solid 20rpx rgba(126, 230, 150, 0.521);
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 20rpx;
+  display: flex;
+  flex: row;
+  justify-content: space-between;
+  height: 80rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+  background-color: #eeeded;
+}
+.title image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.analysisList{
+  position: relative;
+  height: 90%;
+}
+.chooseId{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  height: 300rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  bottom:20rpx;
+  padding:20rpx;
+}
+.id{
+  margin: 20rpx;
+  width: 90rpx;
+  height: 90rpx;
+  text-align: center;
+  background-color: rgba(126, 230, 150, 0.521) ;
+  color: #ffffff;
+  font-size: 50rpx;
+  box-sizing: border-box;
+  padding-top: 10rpx;
+  font-weight: 700;
+  border-radius: 50%;
+}

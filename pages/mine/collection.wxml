@@ -1,0 +1,29 @@
+
+<!-- 空占位 -->
+<view class="empty" wx:if="{{false}}">
+  <ttj-empty description="空空如也"></ttj-empty> 
+</view>
+
+<!-- 下拉选择框 -->
+<ttj-sticky>
+	<ttj-dropdown-menu>
+		<ttj-dropdown-item value="{{ value0 }}" options="{{ typeMenu }}" bind:change="onTypeChange"/>
+	</ttj-dropdown-menu>
+</ttj-sticky>
+
+<!-- Mainner -->
+<block wx:for="{{5}}">
+  <ttj-swipe-cell right-width="{{ 65 }}">
+    <ttj-cell-group border="{{false}}" custom-class="question-group">
+      <ttj-cell use-label-slot custom-class="question-container">
+        <view slot="title"><ttj-tag type="primary">单选题</ttj-tag></view>
+        <view slot="label">
+          <view class="question-context">如下几个表所示学生、课程、必修课和选课关系，用SQL语言实现下列操作。将“选课”表中的1002号课的所有成绩提高10分，正确的SQL语句是_____。</view>
+          <image class="question-img" src="../../images/test.jpg" mode="widthFix" />
+          <view class="question-time">2020-08-06 10:50:01</view>
+        </view>
+      </ttj-cell>
+    </ttj-cell-group>
+    <view slot="right">删除</view>
+  </ttj-swipe-cell>
+</block>

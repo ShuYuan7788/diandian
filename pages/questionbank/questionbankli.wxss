@@ -1,0 +1,51 @@
+.cell-container{
+  padding: 20rpx;
+}
+
+.cell-item-container{
+  margin-top: 20rpx;
+  border-radius: 15rpx;
+  box-shadow: 0px 0px 5px 3px #f2f2f2;
+}
+
+.title-container{
+  margin-bottom: 15rpx;
+}
+
+.title-text{
+  font-weight: 600;
+}
+
+.label-container{
+  display: flex;
+  font-size: 27rpx;
+}
+
+
+.label-credit01{
+  color: #fcbf1e;
+}
+
+.label-credit02{
+  color: #07c160;
+}
+
+.label-credit03{
+  color: #d81e06;
+}
+
+.label-view{
+  margin-left: 10rpx;
+}
+
+.label-from{
+  margin-left: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 400rpx;
+}
+
+.more-img{
+  width: 30rpx;
+}

@@ -1,0 +1,52 @@
+<!-- background -->
+<!-- <view class="background-container">
+  <image src="../../images/ranking/rank-background.png" mode="widthFix" />
+</view> -->
+<view class="container">
+
+  <view class="background"> </view>
+  <!-- nav-bar -->
+  <!-- <ttj-nav-bar custom-class="nav-bar-custom" placeholder="true" title-class="title-container" title="排行榜" left-text="返回" left-arrow bind:click-left="onClickLeft" fixed="true" /> -->
+  
+  <!-- 选择框 -->
+  <ttj-dropdown-menu active-color="#4cd1b0">
+    <ttj-dropdown-item value="{{value}}" options="{{option}}" />
+  </ttj-dropdown-menu>
+
+  <!--个人排名-->
+  <view class="top-group">
+    <!--排名-->
+    <view class="rank">
+      <view wx:if="{{myRank!=0}}" class="text">排 名</view>
+      <view wx:if="{{myRank!=0}}" class="number">{{myRank}}</view>
+      <view wx:if="{{myRank==0}}" class="text" style="margin-top:40rpx;">暂无排名</view>
+    </view>
+
+    <!--头像-->
+    <view catchtap="onToMine" class="user">
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+      <view class="nick">{{userInfo.nick}}</view>
+    </view>
+      
+    <!--答题数-->
+    <view class="total">
+      <view class="text">答题数</view>
+      <view class="number">{{myNumber}}</view>
+    </view>
+  </view>
+
+  <!--排行榜-->
+  <scroll-view class="scrollview" style="height:{{rankHeight}}px;" scroll-y="{{true}}">
+    <!-- <view class="ranklist" wx:for="{{rank}}" wx:key="this">
+    </view> -->
+    <rankitem index="0" item="{{userInfo}}" number="10" ></rankitem>
+    <rankitem index="1" item="{{userInfo}}" number="9" ></rankitem>
+    <rankitem index="2" item="{{userInfo}}" number="8" ></rankitem>
+    <rankitem index="3" item="{{userInfo}}" number="7" ></rankitem>
+    <rankitem index="4" item="{{userInfo}}" number="6" ></rankitem>
+    <rankitem index="5" item="{{userInfo}}" number="5" ></rankitem>
+    <rankitem index="6" item="{{userInfo}}" number="4" ></rankitem>
+
+  </scroll-view>
+
+</view>

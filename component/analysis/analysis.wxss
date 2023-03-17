@@ -1,0 +1,262 @@
+.container{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-bottom: 40rpx;
+  padding: 10rpx;
+}
+.title{
+  height: 55rpx;
+  margin-top: 20rpx;
+  background-color: #f5f5f5;
+  padding-left: 60rpx;
+  font-size: 35rpx;
+  font-weight: 700;
+  padding-top: 10rpx;
+  color: #4cd1b0;
+}
+/* 题目部分 */
+.content-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.content-group{
+  width: 700rpx;
+  box-shadow: 0px 3px 5px 0px #e7e7e7;
+  display: flex;
+  flex-direction: column;
+}
+.question-type-container{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 40rpx;
+  width: 100rpx;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+}
+.optionBox{
+  border: 1px solid #59DBFF;
+}
+.multipleBox{
+  border: 1px solid #fcd337;
+}
+.fillBox{
+  border: 1px solid #1ba784;
+}
+.judgeBox{
+  border: 1px solid #eea2a4;
+}
+.complexBox{
+  border: 1px solid #f07c82;
+}
+.question-type{
+  font-size: 25rpx;
+}
+.option{
+  color: #59DBFF;
+}
+.multiple{
+  color: #fcd337;
+}
+.fill{
+  color: #1ba784;
+}
+.judge{
+  color: #eea2a4;
+}
+.complex{
+  color: #f07c82;
+}
+.content-text-group{
+  display: inline-flex;
+  justify-content: start;
+  margin-top: 15rpx;
+  margin-bottom: 20rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.content{
+  font-size: 37rpx;
+}
+/*题目图片*/
+.image-container{
+  margin-top: 35rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.image-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700rpx;
+  box-shadow: 0px 3px 5px 0px #e7e7e7;
+}
+.question-img{
+  margin: 10rpx;
+  width: 100%;
+  height: 100%;
+}
+/*分割线*/
+.divide-line-container{
+  width: 100%;
+  height: 40rpx;
+  margin-top: 30rpx;
+}
+.divide-line-group{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.line{
+  height: 1px;
+  width: 300rpx;
+  background-color: #e4e4e4;
+}
+.line-text{
+  font-size: 28rpx;
+  color: #C1CDD1;
+}
+/*答案部分*/
+.options-container{
+  margin-top: 30rpx;
+  width: 100%;
+}
+.options-group{
+  margin: 20rpx;
+}
+.option-container{
+  margin-top: 10rpx;
+  padding-top: 15rpx;
+  padding-bottom: 20rpx;
+  border: 1px solid rgb(173, 173, 173);
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+  text-overflow:ellipsis;
+  word-wrap:break-word;
+}
+.wrongStyle{
+  background-color: #fa636f !important;
+  border: 1px solid #fa636f !important;
+}
+.correctStyle{
+  background-color: rgba(126, 230, 150, 0.521) !important;
+  border: 1px solid rgba(126, 230, 150, 0.205) !important;
+}
+.option-text{
+  margin-left: 40rpx;
+  font-size: 35rpx;
+  width: 630rpx;
+}
+/*判断题*/
+.judge-container{
+  width: 100%;
+  height: 200rpx;
+}
+.judge-group{
+  width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.judge-item-container{
+  width: 180rpx;
+  border-radius: 15rpx;
+  border: 1px solid rgb(173, 173, 173);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.judge-item-img{
+  height: 60rpx;
+  width: 60rpx;
+}
+.judge-item-text{
+  font-size: 35rpx;
+  margin: 30rpx;
+  word-break: break-all;
+}
+/*填空题*/
+.fill-container{
+  margin-top: 20rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fill-group{
+  width: 700rpx;
+  box-shadow: 0px 3px 5px 0px #e7e7e7;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.my-fill-answer{
+  margin: 20rpx 20rpx;
+  width: 640rpx;
+  font-size: 35rpx;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.defaultAnswer{
+  color: #adadad;
+}
+.correctAnswer-text{
+  margin: 30rpx;
+  font-size: 30rpx;
+  color: #f57f89;
+}
+/*综合题*/
+.complex-container{
+  margin-top: 20rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.answer-img-container{
+  width: 700rpx;
+  box-shadow: 0px 3px 5px 0px #e7e7e7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.answer-img-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.answer-img{
+  margin: 10rpx;
+  width: 625rpx;
+}
+.complex-group{
+  width: 700rpx;
+  box-shadow: 0px 3px 5px 0px #e7e7e7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.complex-input-container{
+  border: 1px solid #f5f5f5;
+  margin: 30rpx 0;
+  width: 90%;
+  border-radius: 15rpx;
+  position: relative;
+  z-index: 1;
+}
+.complex-myAnswer-text{
+  margin: 20rpx;
+  word-wrap: break-word;
+  font-size: 35rpx;
+}

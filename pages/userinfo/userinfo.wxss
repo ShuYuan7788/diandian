@@ -1,0 +1,98 @@
+/* pages/userinfo/userinfo.wxss */
+Page{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.background{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+.fartherBox{
+  width: 100%;
+  height: 100%;
+  padding-top: 150rpx;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+.user{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 260rpx;
+}
+.user .avatar{
+  border-radius: 50%;
+  width: 130rpx;
+  height: 130rpx;
+  margin-left: auto;
+  margin-right: auto;
+}
+.user .nick{
+  font-size: 40rpx;
+  font-weight: 600;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20rpx;
+  letter-spacing: 6rpx;
+}
+.user .motto{
+  font-size: 34rpx;
+  letter-spacing: 2rpx;
+  color: #8c8b8b;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10rpx;
+}
+.info-group{
+  margin-top: 50rpx;
+  display: flex;
+  justify-content: space-evenly;
+  height: 104rpx;
+}
+.info{
+  width: 140rpx;
+  text-align: center;
+}
+.title{
+  margin-top: 10rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: #8c8b8b;
+}
+.value{
+  text-align: center;
+  font-size: 36rpx;
+  color: #000000;
+}
+.content-group{
+  margin-top: 30rpx;
+  background-color:#ffffff ;
+}
+.van-tabs__line{
+  background-color:#4cd1b0 !important;
+}
+.van-ellipsis{
+  font-size: 32rpx !important;
+}
+.content{
+  width: 100%;
+  /* height: 500rpx;  */
+}
+.van-cell{
+  height: 100rpx !important;
+  border-bottom: solid 2rpx #8c8b8b46;
+}
+.van-cell__title{
+  padding: 10rpx;
+  font-size: 36rpx !important;
+}
+.van-cell__value{
+  padding: 10rpx;
+  font-size: 32rpx !important;
+}

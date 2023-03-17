@@ -1,0 +1,113 @@
+<view class="title">-- {{item.title}} --</view>
+<view class="container">
+  <view class="content-container">
+    <view class="content-group">
+      <view class="question-type-container optionBox" hidden="{{!item.isOption}}">
+        <view class="question-type option" >选择题</view>
+      </view>
+      <view class="question-type-container multipleBox" hidden="{{!item.multipleChoice}}">
+        <view class="question-type multiple" >多选题</view>
+      </view>
+      <view class="question-type-container fillBox" hidden="{{!item.isFill}}">
+        <view class="question-type fill" >填空题</view>
+      </view>
+      <view class="question-type-container judgeBox" hidden="{{!item.isJudge}}">
+        <view class="question-type judge" >判断题</view>
+      </view>
+      <view class="question-type-container complexBox" hidden="{{!item.isComplex}}">
+        <view class="question-type complex" >综合题</view>
+      </view>
+      <view class="content-text-group" hidden="{{!item.questionTitle}}">
+        <view class="content">{{item.questionTitle}}</view>
+      </view>
+      <view class="content-text-group" hidden="{{!item.questionContent}}">
+        <view class="content">{{item.questionContent}}</view>
+      </view>
+    </view>
+  </view>
+  <!--题目图片-->
+  <view class="image-container" hidden="{{!item.imageUrl}}" bind:tap="onPreViewImg">
+    <view class="image-group">
+      <image class="question-img" src="{{item.imageUrl}}" mode="widthFix"/>
+    </view>
+  </view>
+  <!--分割线-->
+  <view class="divide-line-container">
+    <view class="divide-line-group">
+      <view class="line"></view>
+      <view class="line-text">答案</view>
+      <view class="line"></view>
+    </view>
+  </view>
+  <!--题目答案-->
+  <view class="options-container" hidden="{{!item.isOption}}">
+    <view class="options-group">
+      <view class="option-container {{aStyle}}">
+        <view class="option-text" >A.  {{item.optionA}}</view>
+      </view>
+      <view class="option-container {{bStyle}}" style="background-color:rgba(126, 230, 150, 0.521)">
+        <view class="option-text">B.  {{item.optionB}}</view>
+      </view>
+      <view class="option-container {{cStyle}}" style="background-color:#fa636f">
+        <view class="option-text">C.  {{item.optionC}}</view>
+      </view>
+      <view class="option-container {{dStyle}}">
+        <view class="option-text" >D.  {{item.optionD}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="judge-container" hidden="{{!item.isJudge}}">
+    <view class="judge-group">
+      <view class="judge-item-container {{trueStyle}}" style="background-color:rgba(126, 230, 150, 0.521)">
+        <image class="judge-item-img" src="images/true.png" wx:if="{{!optionA}}" />
+        <view class="judge-item-text" wx:else>{{item.optionA}}</view>
+      </view>
+      <view class="judge-item-container {{falseStyle}}" >
+        <image class="judge-item-img" src="images/false.png" wx:if="{{!optionB}}"/>
+        <view class="judge-item-text" wx:else>{{item.optionB}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="fill-container" hidden="{{!item.isFill}}">
+    <view class="fill-group">
+        <text class="my-fill-answer" wx:if="{{item.answerText}}">{{item.answerText}}</text>
+        <text class="my-fill-answer defaultAnswer" wx:else>未填写答案</text>
+    </view>
+    <view class="correctAnswer-text">标准答案</view>
+    <view class="fill-group">
+        <text class="my-fill-answer" >{{item.questionAnswer}}</text>
+    </view>
+  </view>
+
+  <view class="complex-container" hidden="{{!item.isComplex}}">
+    <view class="answer-img-container">
+      <block wx:for="{{item.answerImg}}" wx:key="index">
+        <view class="answer-img-group" bind:tap="onPreviewAnswerImg" data-path="{{item}}">
+          <image class="answer-img" src="{{item.path}}" mode="widthFix"/>
+        </view>
+      </block>
+    </view>
+    <view class="complex-group">
+      <view class="complex-input-container">
+        <view class="complex-myAnswer-text">
+          {{item.answerText ? item.answerText:'未填写答案'}}
+        </view>
+      </view>
+    </view>
+    <view class="correctAnswer-text">标准答案</view>
+    <view class="answer-img-container">=
+        <view class="answer-img-group" bind:tap="onPreviewRightAnswerImg" data-path="{{item.answerImage}}">
+          <image class="answer-img" src="{{item.answerImage}}" mode="widthFix"/>
+        </view>
+    </view>
+    <view class="complex-group">
+      <view class="complex-input-container">
+        <view class="complex-myAnswer-text">
+          {{item.questionAnswer}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

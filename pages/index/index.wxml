@@ -1,0 +1,37 @@
+<!-- https://s1.ax1x.com/2020/08/07/aWdPC8.jpg -->
+<!-- https://s1.ax1x.com/2020/08/07/afpOAS.jpg -->
+<!-- https://s1.ax1x.com/2020/08/07/afUgDs.png -->
+<!-- https://s1.ax1x.com/2020/08/07/afaiqA.png -->
+<!-- <image class="bg" mode="heightFix" src="https://s1.ax1x.com/2020/08/07/af0Jit.png"></image> -->
+<!-- <image class="bg" src="https://s1.ax1x.com/2020/08/07/aWdPC8.jpg"></image> -->
+<image class="bg" src="/pages/index/images/index.png"></image>
+<view class="container">
+  <image wx:if="{{isRegister==true}}" catchtap="onMineEvent" src="{{avatarUrl}}" class="avatarUrl"></image>
+  <button wx:if="{{isRegister==false}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo" hover="true" hover-class="btnhover" class="avatarUrlButton">
+    <image wx:if="{{isRegister==false}}" src="/pages/index/images/mine.png" class="image"></image>
+  </button>
+  <!--每日一题-->
+  <view catchtap="onDaily" class="question">
+    <image class="pencil" src="/pages/index/images/pencil.png"></image>
+    <text>每日一题</text>
+  </view>
+  <!--选项卡-->
+  <view class="option-group">
+    <view class="op1">
+      <card text="历届试题" imageUrl="/pages/index/images/icon1.png" url="/pages/mine/myPaper" />
+    </view>
+
+    <view class="op2">
+      <card text="模拟测试" imageUrl="/pages/index/images/icon2.png" url="/pages/simulation/index" />
+    </view>
+
+    <view class="op3">
+      <card text="我的错题" imageUrl="/pages/index/images/icon3.png" url="/pages/mine/collection" />
+    </view>
+    
+    <view class="op4">
+      <card text="题霸榜" imageUrl="/pages/index/images/icon4.png" url="/pages/ranking/ranking" />
+    </view>
+  </view>
+  
+</view>

@@ -1,0 +1,28 @@
+<!--搜索框-->
+<view catchtap="onClick">
+  <ttj-search disabled placeholder="搜索" shape="round" input-align="center"/>
+</view>
+
+<!-- title -->
+<view class="title-gourp">
+  <view class="line"></view>
+  <view class="title">类型</view>
+  <view class="line"></view>
+</view>
+
+<view class="body-group">
+  <swiper class="swiper-group" catchchange="swiperChange">
+    <swiper-item class="subjuet-container">
+      <ttj-grid column-num="3" square gutter="{{ 14 }}" border="false" clickable="true">
+        <block wx:for="{{typeList}}" wx:key="id">
+          <ttj-grid-item use-slot content-class="box-container" url="/pages/formerdetail/formerdetail?id={{item.id}}">
+            <view class="exam-item-group">
+              <image class="item-icon" src="{{item.iconSrc}}" mode="widthFix" />
+              <view class="item-title">{{item.type}}</view>
+            </view>
+          </ttj-grid-item>
+        </block>
+      </ttj-grid>
+    </swiper-item>
+  </swiper>
+</view>

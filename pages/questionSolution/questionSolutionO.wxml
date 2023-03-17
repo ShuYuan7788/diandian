@@ -1,0 +1,120 @@
+<ttj-tabs active="{{active}}" class="box" swipeable animated sticky>
+  <ttj-tab title="题目详情" class="questionInfo">
+    <scroll-view scroll-y style="position:absolute;width:100%;height:100%;">
+      <ttj-cell-group custom-class="cells-box" border="{{false}}">
+        <ttj-cell custom-class="title" title="约束" use-label-slot>
+          <ttj-icon slot="right-icon" name="{{collectIcon}}" class="custom-icon" size="50rpx" bind:click="clickCollect"/>
+          <ttj-icon slot="right-icon" name="orders-o" class="custom-icon" size="50rpx" bind:click="clickMyAnswer"/>
+          <view slot="label">
+            <view>通过率：99%</view>
+            <view>难易程度：难</view>
+          </view>
+        </ttj-cell>
+        <ttj-cell custom-class="info" use-label-slot>
+          <view slot="title" class="type">
+            <ttj-tag class="ttj-tag" wx:if="{{true}}" color="red" plain>单选题</ttj-tag>
+            <ttj-tag class="ttj-tag" wx:if="{{false}}" color="orange" plain>填空题</ttj-tag>
+            <ttj-tag class="ttj-tag" wx:if="{{false}}" color="orange" plain>综合题</ttj-tag>
+            <ttj-tag class="ttj-tag" wx:if="{{false}}" color="red" plain>判断题</ttj-tag>
+            <ttj-tag class="ttj-tag" wx:if="{{false}}"  color="red" plain>多选题</ttj-tag>
+            <ttj-tag class="ttj-tag" wx:if="{{true}}" color="green" plain>郑海旭工作室</ttj-tag>
+            <ttj-tag class="ttj-tag" wx:if="{{true}}" color="red" plain>错题</ttj-tag>
+          </view>
+          <view slot="label" class="text">
+            <text>你的名字有多长</text>
+          </view>
+        </ttj-cell>
+        <ttj-cell custom-class="answerChoice" title="答题区" use-label-slot>
+          <ttj-radio-group slot="label" value="{{result}}" bind:change="onChoiceChange">
+            <ttj-radio name="a">复选框 a</ttj-radio>
+            <ttj-radio name="b">复选框 b</ttj-radio>
+            <ttj-radio name="c">复选框 c</ttj-radio>
+            <ttj-radio name="d">复选框 d</ttj-radio>
+          </ttj-radio-group>
+        </ttj-cell>
+        <ttj-cell custom-class="answerChoice" title="答题区" use-label-slot>
+          <ttj-checkbox-group slot="label" value="{{result}}" bind:change="onChoiceChange">
+            <ttj-checkbox name="a">复选框 a</ttj-checkbox>
+            <ttj-checkbox name="b">复选框 b</ttj-checkbox>
+            <ttj-checkbox name="c">复选框 c</ttj-checkbox>
+            <ttj-checkbox name="d">复选框 d</ttj-checkbox>
+          </ttj-checkbox-group>
+        </ttj-cell>
+        <ttj-cell custom-class="answerJudge" title="答题区" use-label-slot>
+          <ttj-radio-group slot="label" value="{{result}}" bind:change="onJudgeChange">
+            <ttj-radio name="1" shape="square">√.单选框 1</ttj-radio>
+            <ttj-radio name="2" shape="square">×.单选框 2</ttj-radio>
+          </ttj-radio-group>
+        </ttj-cell>
+        <ttj-cell custom-class="answerInput" title="答题区" use-label-slot>
+          <view slot="label" class="inputBox">
+            <input class="input" value="{{text}}" placeholder="请输入答案"></input>
+          </view>
+        </ttj-cell>
+        <ttj-cell custom-class="answerTextArea" title="答题区" use-label-slot>
+          <!-- <ttj-field slot="label" type="textarea" value="{{text}}" placeholder="请输入答案" placeholder-style="color:rgba(128, 128, 128, 0.8);" border="{{false}}" bind:change="onTextChange" autosize/> -->
+          <view slot="label" class="textAreaBox">
+            <textarea class="textArea" value="{{text}}" placeholder="请输入答案" maxlength="-1" cursor-spacing="40rpx" show-confirm-bar="{{false}}" disable-default-padding="{{true}}"></textarea>
+          </view>
+        </ttj-cell>
+      </ttj-cell-group>
+    </scroll-view>
+    <view class="tabbar" style="position:absolute;bottom:0;">
+      <ttj-button type="primary" size="small" custom-class="around">上一题</ttj-button>
+      <ttj-button type="primary" size="small" custom-class="send">提交答案</ttj-button>
+      <ttj-button type="primary" size="small" custom-class="around">下一题</ttj-button>
+    </view>
+    <ttj-popup show="{{myAnswerShow}}" position="bottom" custom-class="myAnswerShow" bind:close="CloseMyAnswerShow" round>
+      <view class="title">我的答案</view>
+      <view class="myAnswer">dafas</view>
+      <view class="title">正确答案</view>
+      <view class="correctAnswer">dafas</view>
+    </ttj-popup>
+  </ttj-tab>
+  
+  <ttj-tab title="题目解析"class="questionAnalysis">
+    <scroll-view scroll-y style="position:absolute;width:100%;height:100%;">
+      <ttj-cell-group custom-class="cells-box" border="{{false}}">
+        <ttj-cell wx:for="{{10}}" custom-class="analysis" link-type="navigateTo" url="questionAnalysis" use-label-slot>
+          <view slot="title" class="analysisTitle">
+            <image class="avatar"></image>
+            <view class="userName">lsn</view>
+            <ttj-tag type="success" size="medium">官方题解</ttj-tag>
+          </view>
+          <view slot="label" class="analysisLabel">
+            <view class="content">adfasfasdfashfdsghdfg打算离开积分卡是dasgasdgfasdfas啊的飞机喀什返回拉萨的发的饭卡就是大幅拉升了客服的阿斯顿发顺丰的撒发射点发射点发的发生发射点发范德萨发士大夫</view>
+            <view class="bottom">
+              <view class="time">2020-7-31</view>
+              <view class="good">
+                <ttj-icon name="{{goodJob}}" size="50rpx" catchtap="clickgood"/>
+                <view class="count">(32)</view>
+              </view>
+            </view>
+          </view>
+        </ttj-cell>
+      </ttj-cell-group>
+    </scroll-view>
+    <view class="tabbar" style="position:absolute;bottom:0;">
+      <view class="writeAnalysis" bindtap="clickWriteAnalysis">写题解</view>
+    </view>
+    <!-- 富文本编辑器 -->
+    <ttj-popup show="{{writeAnalysisShow}}" position="bottom" custom-class="myAnalysisShow" custom-style="bottom:{{isIOS ? keyboardHeight : 0}}px;" bind:close="CloseMyAnalysisShow" overlay-style="left:100%;" round safe-area-inset-bottom>
+      <view class="container">
+          <editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange" bindready="onEditorReady">
+          </editor>
+      </view>
+      <view class="toolbar" catchtouchend="format" hidden="{{keyboardHeight > 0 ? false : true}}" style="bottom:{{isIOS ? keyboardHeight : 0}}px;left:100%;">
+        <i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>
+        <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i>
+        <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" data-value="{{3}}"></i>
+        <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+        <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+        <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+        <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+        <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i>
+        <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i>
+      </view>
+    </ttj-popup>
+    <!-- 富文本编辑器 -->
+  </ttj-tab>
+</ttj-tabs>

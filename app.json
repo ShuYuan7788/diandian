@@ -1,0 +1,91 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userinfo/userinfo",
+    "pages/mine/myPaper",
+    "pages/analysis/analysis",
+    "pages/previewpaper/previewpaper",
+    "pages/questionSolution/questionSolutionO",
+    "pages/previewpaper/previewanswer",
+    "pages/questionbank/questionbank",
+    "pages/questionSolution/questionAnalysis",
+    "pages/search/search",
+    "pages/register/register",
+    "pages/featured/featured",
+    "pages/questionbank/questionbankli",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/ranking/ranking",
+    "pages/simulation/index",
+    "pages/dailyque/completedailyqu",
+    "pages/simulation/simulation",
+    "pages/simulation/overview",
+    "pages/mine/mine",
+    "pages/mine/collection",
+    "pages/formerexam/formerexam",
+    "pages/mine/loveChoice"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/questionbank/questionbank",
+        "text": "题库"
+      },
+      {
+        "pagePath": "pages/featured/featured",
+        "text": "精选"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "ttj-tabbar": "/miniprogram_npm/@vant/weapp/tabbar/index",
+    "ttj-tabbar-item": "/miniprogram_npm/@vant/weapp/tabbar-item/index",
+    "ttj-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "ttj-search": "/miniprogram_npm/@vant/weapp/search/index",
+    "ttj-grid": "/miniprogram_npm/@vant/weapp/grid/index",
+    "ttj-grid-item": "/miniprogram_npm/@vant/weapp/grid-item/index",
+    "ttj-sticky": "/miniprogram_npm/@vant/weapp/sticky/index",
+    "ttj-dropdown-menu": "/miniprogram_npm/@vant/weapp/dropdown-menu/index",
+    "ttj-dropdown-item": "/miniprogram_npm/@vant/weapp/dropdown-item/index",
+    "ttj-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "ttj-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "ttj-picker": "/miniprogram_npm/@vant/weapp/picker/index",
+    "ttj-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+    "ttj-nav-bar": "/miniprogram_npm/@vant/weapp/nav-bar/index",
+    "ttj-field": "/miniprogram_npm/@vant/weapp/field/index",
+    "ttj-button": "/miniprogram_npm/@vant/weapp/button/index",
+    "ttj-checkbox": "/miniprogram_npm/@vant/weapp/checkbox/index",
+    "ttj-overlay": "/miniprogram_npm/@vant/weapp/overlay/index",
+    "ttj-count-down": "/miniprogram_npm/@vant/weapp/count-down/index",
+    "ttj-dialog": "/miniprogram_npm/@vant/weapp/dialog/index",
+    "ttj-radio": "/miniprogram_npm/@vant/weapp/radio/index",
+    "ttj-radio-group": "/miniprogram_npm/@vant/weapp/radio-group/index",
+    "ttj-checkbox-group": "/miniprogram_npm/@vant/weapp/checkbox-group/index",
+    "ttj-tab": "/miniprogram_npm/@vant/weapp/tab/index",
+    "ttj-tabs": "/miniprogram_npm/@vant/weapp/tabs/index",
+    "ttj-tag": "/miniprogram_npm/@vant/weapp/tag/index",
+    "ttj-swipe-cell": "/miniprogram_npm/@vant/weapp/swipe-cell/index",
+    "ttj-divider": "/miniprogram_npm/@vant/weapp/divider/index",
+    "ttj-goods-action": "/miniprogram_npm/@vant/weapp/goods-action/index",
+    "ttj-goods-action-icon": "/miniprogram_npm/@vant/weapp/goods-action-icon/index",
+    "ttj-goods-action-button": "/miniprogram_npm/@vant/weapp/goods-action-button/index",
+    "ttj-uploader": "/miniprogram_npm/@vant/weapp/uploader/index",
+    "ttj-steps": "/miniprogram_npm/@vant/weapp/steps/index",
+    "ttj-empty": "/miniprogram_npm/@vant/weapp/empty/index"
+  }
+}

@@ -1,0 +1,40 @@
+<!--pages/userinfo/userinfo.wxml-->
+<!--背景图-->
+<image class="background" src="/pages/register/images/register.jpg"></image>
+<!--返回键-->
+<ttj-icon name="arrow-left" size="50rpx"  catch:click="returnIndex" style="margin-top:60rpx;margin-left:40rpx;position:fixed"/>
+<view class="fartherBox">
+  <view class="user">
+    <image class="avatar" src="images/avatar.jpg"></image>
+    <view class="nick">Lee</view>
+    <view class="motto">暂无签名</view>
+  </view>
+  <view class="info-group">
+    <view class="info">
+      <view class="value">106</view>
+      <view class="title">做题数</view>
+    </view>
+    <view class="info">
+      <view class="value">88.68%</view>
+      <view class="title">正确率</view>
+    </view>
+  </view>
+  <view class="content-group">
+    <ttj-tabs active="{{ active }}" bind:change="onChange">
+      <ttj-tab title="最近做题">
+        <view class="content">
+          <ttj-cell catch:click="onClick" title="ip地址" value="算法竞赛"/>
+          <ttj-cell title="ip地址" value="蓝桥杯模拟赛"/>
+          <ttj-cell title="ip地址" value="算法竞赛"/>
+        </view>
+      </ttj-tab>
+      <ttj-tab title="他的收藏">
+        <view class="content">
+          <ttj-cell title="二叉树" value="算法竞赛"/>
+          <ttj-cell title="二叉树" value="算法竞赛"/>
+          <ttj-cell title="二叉树" value="算法竞赛"/>
+        </view>
+      </ttj-tab>
+    </ttj-tabs>
+  </view>
+</view>

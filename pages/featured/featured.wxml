@@ -1,0 +1,21 @@
+
+<!-- 背景图片 -->
+<view class="image-container">
+    <image class="background-img" src="http://tk.geek52.cn//wallpaper/03.png" mode="scaleToFill" />
+</view>
+
+<!-- Mainner -->
+<view class="cell-group">
+  <ttj-cell-group>
+    <ttj-cell url="/pages/formerexam/formerexam" custom-class="nav-container" title-class="nav-title" label-class="nav-label" use-label-slot center clickable border="{{ false }}">
+      <view slot="title">历届试题</view>
+      <view slot="label">共30个学科，380份试卷</view>
+      <view slot="right-icon"><ttj-icon size="40rpx" name="weapp-nav" /></view>
+    </ttj-cell>
+    <ttj-cell url="/pages/simulation/index" custom-class="nav-container" title-class="nav-title" label-class="nav-label" use-label-slot center clickable border="{{ false }}">
+      <view slot="title">模拟测试</view>
+      <view slot="label">模拟真实考试</view>
+      <view slot="right-icon"><ttj-icon size="40rpx" name="weapp-nav" /></view>
+    </ttj-cell>
+  </ttj-cell-group>
+</view>

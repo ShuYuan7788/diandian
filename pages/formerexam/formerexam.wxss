@@ -1,0 +1,54 @@
+/* pages/formerexam/formerexam.wxss */
+
+.title-gourp{
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+  margin-top: 8%;
+}
+
+.line{
+  background-color: black;
+  width: 25rpx;
+  height: 2rpx;
+  margin: 5rpx 10rpx 0 10rpx;
+}
+
+.title{
+  font-weight: 600;
+}
+
+.exam-item-group{
+  display: flex;
+  flex-direction: column;
+}
+
+.box-container{
+  background-color: white;
+  border-radius: 10rpx !important;
+  box-shadow: 0 0 10px 0px #e9e6e6 !important;
+}
+
+.item-icon{
+  width: 60rpx;
+}
+
+.item-title{
+  font-size: 30rpx;
+  font-weight: 500;
+  line-height: 50rpx;
+}
+
+.swiper-group{
+  height: 900rpx;
+}
+
+.body-group{
+  margin-top: 7%;
+}
+
+.van-grid{
+  padding-top: 10rpx;
+}

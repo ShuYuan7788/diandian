@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "disableScroll": true,
+  "navigationStyle": "default",
+  "navigationBarBackgroundColor": "#e2d1f8",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "学科偏好"
+}

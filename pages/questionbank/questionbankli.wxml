@@ -1,0 +1,35 @@
+<!--搜索框-->
+<view catchtap="onClick">
+	<ttj-search disabled placeholder="搜索" shape="round" input-align="center" />
+</view>
+
+
+<!--下拉选择框-->
+<ttj-sticky>
+	<ttj-dropdown-menu>
+		<ttj-dropdown-item value="{{ value0 }}" options="{{ typeMenu }}" bind:change="onTypeChange"/>
+		<ttj-dropdown-item value="{{ value0 }}" options="{{ yearMenu }}" bind:change="onYearChange"/>
+		<ttj-dropdown-item value="{{ value0 }}" options="{{ difficultyMenu }}" bind:change="onDifficultyChange"/>
+	</ttj-dropdown-menu>
+</ttj-sticky>
+
+<!--Mainner-->
+<ttj-cell-group custom-class="cell-container">
+	<block wx:for="{{questionList}}" wx:key="questionId">
+		<ttj-cell border="{{ false }}" custom-class="cell-item-container" use-label-slot title-style="font-size:35rpx" url="/pages/questionSolution/questionSolutionO" size="large" clickable>
+			<view slot="title" class="title-container">
+				<view class="title-text">{{item.questionTitle}}</view>
+			</view>
+			<view slot="right-icon">
+				<image src="images/more.png" class="more-img" mode="widthFix" ></image>
+			</view>
+			<view slot="label" class="label-container">
+				<view class="label-credit01" wx:if="{{item.questionCredit == 1 ? true : false}}">简单</view>
+				<view class="label-credit02" wx:if="{{item.questionCredit == 2 ? true : false}}">中等</view>
+				<view class="label-credit03" wx:if="{{item.questionCredit == 3 ? true : false}}">困难</view>
+				<view class="label-view">浏览 {{item.questionView}}</view>
+				<view class="label-from">来源 {{item.questionFrom}}</view>
+			</view>
+		</ttj-cell>
+	</block>
+</ttj-cell-group>

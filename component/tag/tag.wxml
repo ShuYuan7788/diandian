@@ -1,0 +1,4 @@
+<!--component/tag/tag.wxml-->
+<view class="tag">
+  <text class="text" catch:tap="onConfirm">{{text}}</text>
+</view>

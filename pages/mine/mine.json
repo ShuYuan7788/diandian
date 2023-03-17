@@ -1,0 +1,8 @@
+{
+  "usingComponents": {},
+  "disableScroll": true,
+  "navigationStyle": "default",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "我的"
+}

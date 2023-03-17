@@ -1,0 +1,18 @@
+<view class="title">
+  <view class="examname">蓝桥杯模拟赛</view>
+  <image src="images/paper.png" catchtap="onClick"></image>
+</view>
+<scroll-view scroll-into-view="{{toView}}" scroll-y="true" scroll-with-animation="true" class="analysisList">
+  <view wx:for="{{list}}" wx:key="item" id="{{item.id}}">
+    <analysis item="{{item}}" id="{{item.id}}" />
+  </view>
+</scroll-view>
+<!--弹出选择题号-->
+<ttj-popup show="{{ show }}" round position="bottom" custom-style="height: 30%" bind:close="onClose">
+  <view class="chooseId"> 
+    <view class="id" wx:for="{{list}}" wx:key="item" data-id="{{item.id}}" catchtap="jumpTo">
+    {{item.title}}
+    </view>
+  </view>  
+</ttj-popup>
+

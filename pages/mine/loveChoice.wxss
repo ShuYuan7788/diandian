@@ -1,0 +1,90 @@
+.background{
+  z-index: 0;
+  filter: blur(20rpx);
+  transform: scale(1.2);/*去虚化后出现的白边*/
+}
+
+.fatherBox .subject{
+  width: 140rpx;
+  height: 190rpx;
+  z-index: 60;
+}
+.fatherBox .subject image{
+  width: 120rpx;
+  height: 120rpx;
+  border: 6rpx solid rgba(226, 209, 248, 0.685);
+  /* box-shadow: 0 0 10rpx rgba(226, 209, 248, 0.507); */
+  /* border-radius: 30%; */
+}
+.fatherBox .subject view{
+  width: 130rpx;
+  text-align: center;
+  background: rgba(226, 209, 248, 0.685);
+  /* border: 2rpx solid rgb(168, 167, 167,0.61); */
+  box-shadow: 0 0 10rpx rgba(226, 209, 248, 0.685);
+  /* border: 10rpx solid pink; */
+  box-sizing: content-box;
+  /* border-radius: 10rpx; */
+}
+
+.schedule{
+  width: 250rpx;
+  height: 250rpx;
+  border: 10rpx solid rgba(226, 209, 248, 0.685);
+  z-index: 20;
+}
+.scheduleT{
+  width: 250rpx;
+  height: 250rpx;
+  border: 10rpx solid rgba(226, 209, 248, 0.363);
+  /* z-index: 19; */
+}
+
+.maskOne{
+  background: rgba(92, 92, 92, 0.61);
+  z-index: 70;
+}
+.maskOne .plus{
+  width: 250rpx;
+  height: 250rpx;
+  border: 10rpx solid rgba(226, 209, 248, 0.685);
+  box-shadow: 0 0 20rpx rgba(255, 255, 255, 0.603);
+}
+.maskOne .textView{
+  display: flex;
+  justify-content: center;
+}
+.maskOne .textView .text{
+  width: 500rpx;
+  background: white;
+  border: 1rpx solid white;
+  border-radius: 15rpx;
+  box-shadow: 0 0 20rpx rgba(255, 255, 255, 0.603);
+  text-align: center;
+  justify-content: center;
+}
+.maskOne .buttonView .button{
+  box-shadow: 0 0 20rpx rgba(255, 255, 255, 0.603);
+}
+.maskTwo{
+  background: rgba(92, 92, 92, 0.61);
+  z-index: 70;
+}
+.maskTwo .textView{
+  display: flex;
+  justify-content: center;
+}
+.maskTwo .textView .text{
+  width: 700rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx; 
+  background: white;
+  border: 1rpx solid white;
+  border-radius: 15rpx;
+  box-shadow: 0 0 20rpx rgba(255, 255, 255, 0.603);
+  text-align: center;
+  justify-content: center;
+}
+.maskTwo .buttonView .button{
+  box-shadow: 0 0 20rpx rgba(255, 255, 255, 0.603);
+}

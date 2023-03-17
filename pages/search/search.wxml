@@ -1,0 +1,13 @@
+<!--pages/search/search.wxml-->
+<ttj-search v-model="{{searchvalue}}" use-action-slot name="search-value" placeholder="{{placeholder}}" show-action catch:serach="onSearch" catch:change="onChange">
+  <view slot="action" catch:tap="onClick">取消</view>
+</ttj-search>
+<!--历史搜索-->
+<view class="title">历史搜索</view>
+<view class="tag-group">
+  <!--组件tag-->
+  <tag text="1111111"></tag>
+  <tag text="约数"></tag>
+  <tag text="hhhhhhh"></tag>
+  <tag text="约数约束约束约束"></tag>
+</view>
